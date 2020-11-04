@@ -6,8 +6,8 @@
     <name>Nepxion Discovery</name>
     <packaging>pom</packaging>
     <modelVersion>4.0.0</modelVersion>
-    <version>6.3.3</version>
-    <description>Nepxion Discovery is an enhancement for Spring Cloud with gray, blue greeen, weight route, limitation, circuit breaker, degrade, failover, isolation, monitor, tracing</description>
+    <version>6.3.5-SNAPSHOT</version>
+    <description>Nepxion Discovery is a solution for Spring Cloud with gray, blue green, weight, limitation, circuit breaker, degrade, isolation, monitor, tracing, dye, failover, async agent</description>
     <url>http://www.nepxion.com</url>
 
     <modules>
@@ -34,11 +34,12 @@
         <dom4j.version>1.6.1</dom4j.version>
         <swagger.version>2.9.2</swagger.version>
         <apollo.client.version>1.7.0</apollo.client.version>
+        <opentelemetry.version>0.9.1</opentelemetry.version>
         <opentracing.version>0.33.0</opentracing.version>
         <skywalking.version>8.1.0</skywalking.version>
         <spring.cloud.version>Hoxton.SR8</spring.cloud.version>
         <spring.cloud.alibaba.version>2.2.3.RELEASE</spring.cloud.alibaba.version>
-        <spring.boot.version>2.3.4.RELEASE</spring.boot.version>
+        <spring.boot.version>2.3.5.RELEASE</spring.boot.version>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -173,6 +174,12 @@
 
             <dependency>
                 <groupId>${project.groupId}</groupId>
+                <artifactId>discovery-plugin-strategy-starter-opentelemetry</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>discovery-plugin-strategy-starter-opentracing</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -210,6 +217,12 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>discovery-plugin-strategy-starter-sentinel-monitor</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>discovery-plugin-strategy-starter-sentinel-opentelemetry</artifactId>
                 <version>${project.version}</version>
             </dependency>
 

@@ -10,7 +10,7 @@ package com.nepxion.discovery.common.constant;
  */
 
 public class DiscoveryConstant {
-    public static final String DISCOVERY_VERSION = "6.3.3";
+    public static final String DISCOVERY_VERSION = "6.3.5-SNAPSHOT";
 
     public static final String SPRING_APPLICATION_DISCOVERY_PLUGIN = "spring.application.discovery.plugin";
     public static final String SPRING_APPLICATION_DISCOVERY_VERSION = "spring.application.discovery.version";
@@ -129,6 +129,7 @@ public class DiscoveryConstant {
     public static final String RETURN = "return";
     public static final String PARAMETER_MAP = "parameterMap";
     public static final String EVENT = "event";
+    public static final String ERROR = "error";
     public static final String ERROR_OBJECT = "error.object";
 
     public static final String XML_FORMAT = "xml";

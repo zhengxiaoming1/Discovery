@@ -88,7 +88,7 @@ Discovery【探索】微服务框架，基于Spring Cloud Discovery服务注册�
 - 支持阿里巴巴Nacos、Eureka、Consul和Zookeeper四个服务注册发现中心
 - 支持阿里巴巴Nacos、携程Apollo和Redis三个远程配置中心
 - 支持阿里巴巴Sentinel和Hystrix两个熔断限流降级权限中间件
-- 支持Uber Jaeger、Apache Skywalking两个符合OpenTracing规范的调用链中间件
+- 支持OpenTracing和OpenTelemetry规范下的调用链中间件，Uber Jaeger、Apache Skywalking和Zipkin等
 - 支持Prometheus Micrometer和Spring Boot Admin两个指标中间件
 - 支持Java Agent解决异步跨线程ThreadLocal上下文传递
 - 支持Spring Cloud Gateway、Zuul网关和微服务三大模块的灰度发布和路由等一系列功能
@@ -170,7 +170,7 @@ Discovery【探索】微服务框架，基于Spring Cloud Discovery服务注册�
     - 基于WRK的性能压力测试
 - Docker容器化和Kubernetes平台的无缝支持部署
 
-![](http://nepxion.gitee.io/docs/icon-doc/information.png) 基于RESTful层面的功能全景
+![](http://nepxion.gitee.io/docs/icon-doc/tip.png) 基于RESTful层面的功能全景
 
 ![](http://nepxion.gitee.io/docs/discovery-doc/Introduction.jpg)
 
@@ -244,7 +244,7 @@ Discovery【探索】微服务框架，基于Spring Cloud Discovery服务注册�
       <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/zm.png"></td>
     </tr>
     <tr align="center">
-       <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/dfhk.png"></td>
+      <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/dfhk.png"></td>
       <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/sfkj.png"></td>
       <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/wkfy.png"></td>
       <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/rxkf.png"></td>
@@ -316,13 +316,25 @@ Discovery【探索】微服务框架，基于Spring Cloud Discovery服务注册�
     <tr align="center">
       <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/zscd.png"></td>
       <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/sp.png"></td>
+      <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/gjdw.png"></td>
+      <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/xyzs.png"></td>
+      <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/dfqc.png"></td>
+    </tr>
+    <tr align="center">
+      <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/nrjt.png"></td>
+      <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/sxyh.png"></td>
+      <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/nycf.png"></td>
+      <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/hzty.png"></td>
+      <td><img style="max-height:70%;max-width:70%;" src="http://nepxion.gitee.io/docs/logo-doc/sxmy.png"></td>
     </tr>
   </tbody>
 </table>
 
-![](http://nepxion.gitee.io/docs/icon-doc/tip.png) 为提供更好的专业级服务，请更多已经使用本框架的公司和企业联系我，也可以在Github Issues上登记
+![](http://nepxion.gitee.io/docs/icon-doc/edit_32.png) 为提供更好的专业级服务，请更多已经使用本框架的公司和企业联系我，并希望在[Github Issues](https://github.com/Nepxion/Discovery/issues/56)上登记
 
-![](http://nepxion.gitee.io/docs/icon-doc/chart_bar_32.png) 某大型互联网教育公司在生产环境全套接入Nepxion Discovery框架的服务实例数截至到2020年10月已达到1200个
+![](http://nepxion.gitee.io/docs/icon-doc/chart_bar_32.png) 某大型互联网教育公司在生产环境全套接入Nepxion Discovery框架的服务实例数截至到2020年11月已达到2000个
+
+[^_^]: <img src="http://nepxion.gitee.io/docs/logo-doc/jieru.png" width="180"/>
 
 ## 目录
 - [简介](#简介)
@@ -599,6 +611,7 @@ spring.application.strategy.control.enabled=false
 | &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-zuul | 路由策略在Zuul网关端的Starter |
 | &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-gateway | 路由策略在Spring Cloud Gateway网关端的Starter |
 | &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-hystrix | 路由策略下，Hystrix做线程模式的服务隔离必须引入插件的Starter |
+| &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-opentelemetry | 路由策略的OpenTelemetry调用链的Starter |
 | &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-opentracing | 路由策略的OpenTracing调用链的Starter |
 | &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-skywalking | 路由策略的Skywalking调用链的Starter |
 | &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-sentinel | 路由策略的Sentinel Starter |
@@ -606,6 +619,7 @@ spring.application.strategy.control.enabled=false
 | &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-sentinel-apollo | 路由策略的Sentinel Apollo配置订阅的Starter |
 | &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-sentinel-nacos | 路由策略的Sentinel Nacos配置订阅的Starter |
 | &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-sentinel-monitor | 路由策略的Sentinel监控抽象的Starter |
+| &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-sentinel-opentelemetry | 路由策略的Sentinel OpenTelemetry调用链的Starter |
 | &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-sentinel-opentracing | 路由策略的Sentinel OpenTracing调用链的Starter |
 | &nbsp;&nbsp;<img src="http://nepxion.gitee.io/docs/icon-doc/direction_west.png"> discovery-plugin-strategy-starter-sentinel-skywalking | 路由策略的Sentinel Skywalking调用链的Starter |
 | <img src="http://nepxion.gitee.io/docs/icon-doc/direction_south.png"> discovery-plugin-test | 测试模块目录 |
@@ -754,6 +768,7 @@ spring.application.strategy.control.enabled=false
 微服务端引入
 <dependency>
     <groupId>com.nepxion</groupId>
+    <artifactId>discovery-plugin-strategy-sentinel-starter-opentelemetry</artifactId>
     <artifactId>discovery-plugin-strategy-sentinel-starter-opentracing</artifactId>
     <artifactId>discovery-plugin-strategy-sentinel-starter-skywalking</artifactId>
     <version>${discovery.version}</version>
@@ -836,6 +851,15 @@ zuul
 -> [ID=discovery-guide-service-b][P=Nacos][H=192.168.0.107:4001][V=1.0][R=qa][E=env1][Z=zone2][G=discovery-guide-group][TID=48682.7508.15870951148324081][SID=49571.85.15870951189970000]
 ```
 
+- 在Postman中多种同步和异步的调用方式，异步方式需要增加DiscoveryAgent，才能保证灰度路由成功
+
+| URL | 调用方式 |
+| --- | --- |
+| /invoke/ | 同步调用 |
+| /invoke-async/ | @Async注解方式的异步调用 |
+| /invoke-thread/ | 单线程方式的异步调用 |
+| /invoke-threadpool/ | 线程池方式的异步调用 |
+
 - 上述步骤在下面每次更改规则策略的时候执行，并验证结果和规则策略的期望值是否相同
 
 ② 通过图形化界面验证
@@ -845,7 +869,7 @@ zuul
 - 下载[源码主页](https://github.com/Nepxion/Discovery)的工程，并导入IDE
 - 启动源码工程下的discovery-springcloud-example-console/ConsoleApplication
 - 启动源码工程下的discovery-console-desktop/ConsoleLauncher
-- 通过admin/admin登录，点击【显示服务拓扑】按钮，将呈现如下界面
+- 通过admin/admin或者nepxion/nepxion登录，点击【显示服务拓扑】按钮，将呈现如下界面
 
 ![](http://nepxion.gitee.io/docs/discovery-doc/DiscoveryGuide5-2.jpg)
 
@@ -1112,10 +1136,6 @@ IP地址和端口灰度路由架构图
             <route id="version-route1" type="version">{"discovery-guide-service-a":"1.1", "discovery-guide-service-b":"1.1"}</route>
             <route id="version-route2" type="version">{"discovery-guide-service-a":"1.0", "discovery-guide-service-b":"1.1"}</route>
         </routes>
-
-        <headers>
-            <header key="a" value="1"/>
-        </headers>
     </strategy-customization>
 </rule>
 ```
@@ -2536,6 +2556,28 @@ Nacos订阅推送界面
 
 ![](http://nepxion.gitee.io/docs/discovery-doc/Nacos2.jpg)
 - 参考Nacos官方文档[https://github.com/alibaba/nacos](https://github.com/alibaba/nacos)相关文档，搭建Nacos环境，以及熟悉相关的基本操作
+- 下面配置中，nacos.server-addr必须要配置，其它配置可选
+```
+nacos.server-addr=localhost:8848
+# nacos.access-key=
+# nacos.secret-key=
+# nacos.plugin.namespace=application
+# nacos.plugin.cluster-name=
+# nacos.plugin.context-path=
+# nacos.plugin.config-long-poll-timeout=
+# nacos.plugin.config-retry-time=
+# nacos.plugin.max-retry=
+# nacos.plugin.endpoint=
+# nacos.plugin.endpoint-port=
+# nacos.plugin.is-use-endpoint-parsing-rule=
+# nacos.plugin.is-use-cloud-namespace-parsing=
+# nacos.plugin.encode=
+# nacos.plugin.naming-load-cache-at-start=
+# nacos.plugin.naming-client-beat-thread-count=
+# nacos.plugin.naming-polling-thread-count=
+# nacos.plugin.ram-role-name=
+# nacos.plugin.timout=
+```
 - 添加配置步骤跟Apollo配置界面中的【在页面中添加配置】操作项相似
 
 Redis订阅推送界面
@@ -3154,12 +3196,12 @@ spring.application.strategy.hystrix.threadlocal.supported=true
 ![](http://nepxion.gitee.io/docs/discovery-doc/JaegerPremium2.jpg)
 ![](http://nepxion.gitee.io/docs/discovery-doc/JaegerPremium3.jpg)
 
-集成Opentracing + Apache Skywalking限流熔断降级权限全链路监控
+集成Opentracing + Apache Skywalking灰度全链路监控
 
 ![](http://nepxion.gitee.io/docs/discovery-doc/Skywalking1.jpg)
 ![](http://nepxion.gitee.io/docs/discovery-doc/Skywalking2.jpg)
 
-集成Opentracing + Apache Skywalking + Sentinel埋点全链路监控
+集成Opentracing + Apache Skywalking + Sentinel限流熔断降级权限埋点全链路监控
 
 ![](http://nepxion.gitee.io/docs/discovery-doc/Skywalking3.jpg)
 ![](http://nepxion.gitee.io/docs/discovery-doc/Skywalking4.jpg)
@@ -3323,7 +3365,6 @@ spring.application.strategy.tracer.sentinel.args.output.enabled=true
 
 #### Spring-Boot-Admin监控方式
 ![](http://nepxion.gitee.io/docs/discovery-doc/Admin1.jpg)
-![](http://nepxion.gitee.io/docs/discovery-doc/Admin2.jpg)
 ![](http://nepxion.gitee.io/docs/discovery-doc/Admin7.jpg)
 
 ## 全链路Header传递
@@ -3405,6 +3446,7 @@ ThreadLocal的作用是提供线程内的局部变量，在多线程环境下访
     - `@`Async场景下的扫描目录对应为org.springframework.aop.interceptor
     - Hystrix线程池隔离场景下的扫描目录对应为com.netflix.hystrix
     - 线程，线程池的扫描目录对应为自定义Runnable，Callable对象所在类的目录
+    - 上述扫描路径如果含有“;”，可能会在某些操作系统中无法被识别，请用`""`进行引入，例如，-Dthread.scan.packages="com.abc;com.xyz"
 - `-D`thread.request.decorator.enabled：异步调用场景下在服务端的Request请求的装饰，当主线程先于子线程执行完的时候，Request会被Destory，导致Header仍旧拿不到，开启装饰，就可以确保拿到。默认为开启，根据实践经验，大多数场景下，需要开启该开关
 - `-D`thread.mdc.enabled：SLF4J MDC日志输出到异步子线程。默认关闭，如果需要，则开启该开关
 
@@ -3693,28 +3735,6 @@ spring.application.group.generator.character=-
 ```
 
 更多的配置方式，参考[https://github.com/git-commit-id/maven-git-commit-id-plugin/blob/master/maven/docs/using-the-plugin.md](https://github.com/git-commit-id/maven-git-commit-id-plugin/blob/master/maven/docs/using-the-plugin.md)
-
-可能需要增加下面的配置，保证Git相关文件被打包进去
-```xml
-<resources>
-    <resource>
-        <directory>src/main/java</directory>
-        <includes>
-            <include>**/*.xml</include>
-            <include>**/*.json</include>
-            <include>**/*.properties</include>
-        </includes>
-    </resource>
-    <resource>
-        <directory>src/main/resources</directory>
-        <includes>
-            <include>**/*.xml</include>
-            <include>**/*.json</include>
-            <include>**/*.properties</include>
-        </includes>
-    </resource>
-</resources>
-```
 
 - 增加配置项
 ```
